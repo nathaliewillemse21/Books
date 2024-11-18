@@ -69,6 +69,18 @@ body.light-mode {
 #productGrid {
     padding: 20px;
 }
+#cartIcon {
+    position: relative;
+}
+
+#cartCount {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+}
 
 /* Product Page */
 
