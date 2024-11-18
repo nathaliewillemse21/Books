@@ -1,3 +1,12 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 h1 {
     display: flex;
     justify-content: center;
@@ -62,3 +71,81 @@ body.light-mode {
 }
 
 /* Product Page */
+
+
+/* About Page */
+#view {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;  /* Ensure content is centered */
+    align-items: center;      /* Center vertically */
+  }
+  
+  .image {
+    position: relative;
+  }
+  
+  /* Gallery Styles */
+.gallery {
+    --s: 150px; /* Image size */
+    display: grid;
+    transform-style: preserve-3d;
+    animation: r 15s linear infinite;
+    position: relative;
+  }
+  
+  @keyframes r {
+    0% {transform: perspective(450px) rotateX(-100deg) rotate(0deg)}
+    to {transform: perspective(450px) rotateX(-100deg) rotate(-360deg)}
+  }
+  
+  .gallery > img {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transform: rotate(var(--_a)) translateY(120%) rotateX(90deg);
+  }
+  
+  .gallery > img:nth-child(1) {--_a: 0deg}
+  .gallery > img:nth-child(2) {--_a: 60deg}
+  .gallery > img:nth-child(3) {--_a: 120deg}
+  .gallery > img:nth-child(4) {--_a: 180deg}
+  .gallery > img:nth-child(5) {--_a: 240deg}
+  .gallery > img:nth-child(6) {--_a: 300deg}
+  
+  .gallery::before {
+    content: "";
+    position: absolute;
+    inset: -100%;
+    clip-path: polygon(50% 0,calc(50% + .866*50%) 25%,calc(50% + .866*50%) 75%,50% 100%,calc(50% - .866*50%) 75%,calc(50% - .866*50%) 25%);
+    background: #99B2B7;
+    transform: translateZ(calc(var(--s)/2)) rotate(90deg);
+  }
+  
+  /* Carousel Container */
+  .carousel-instruments {
+    margin: 0;
+    min-height: 70vh;
+    display: grid;
+    place-content: center;
+    background: #e9eeef;
+    overflow: hidden;
+  }
+  
+  
+/* About Page */
+
+
+/* Checkout Page */
+.toast-notification {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Checkout Page */
